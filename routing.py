@@ -47,6 +47,10 @@ def simulate_api_call(routing_details, classified_email):
     print("\nSimulating API call with payload:")
     print(json.dumps(payload, indent=4))
 
+    print("\nSimulated API response:")
+    print(json.dumps({"ticket_id": "123456", "status": "created", "assigned_team": payload["teams"]}, indent=4))
+
+
 def simulate_auto_reply(classified_email, routing_details):
     if classified_email.get("sender", "").lower() == SUPPORT_EMAIL:
         return
